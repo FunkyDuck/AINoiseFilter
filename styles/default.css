@@ -1,0 +1,97 @@
+:root {
+    --red-main: #EE6055;
+    --red-light: #FF9B85;
+    --green-main: #60D394;
+    --green-light: #AAF683;
+    --yellow-main: #FFD97D;
+    --yellow-light: #FFE7AD;
+    --orange-main: #FFBA81;
+    --white-main: #FFFFFF;
+    --black-main: #000000;
+}
+
+body {
+    text-align: center;
+    background: var(--white-main);
+    font-family: "Dongle", sans-serif;
+    height: 100dvh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    section.alert {
+        background: var(--yellow-light);
+        border: var(--red-main) 2px solid;
+        border-radius: 4px;
+        width: 80dvw;
+        margin: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 2dvh 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        h1 {
+            color: var(--red-main);
+            font-weight: 900;
+            font-size: 5rem;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+
+            img {
+                width: 100%;
+                max-width: 10dvh;
+                height: auto;
+            }
+        }
+    
+        h2 {
+            color: var(--red-light);
+            font-weight: 800;
+            font-size: 4rem;
+        }
+    
+        p {
+            color: var(--green-main);
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    
+    }
+    
+    section.buttons-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        button {
+            background: var(--green-main);
+            color: var(--white-main);
+            border: none;
+            border-radius: 4px;
+            width: 20dvw;
+            height: 7.5dvh;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0.5dvh 1dvw;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: var(--black-main);
+
+        section.buttons-bar {
+            button {
+                color: var(--black-main);
+            }
+        }
+    }
+}

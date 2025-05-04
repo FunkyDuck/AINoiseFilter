@@ -1,0 +1,38 @@
+{
+    "blacklist-ia": [
+    ],
+    "blacklist-fakenews": [
+      "tagtik.be",
+      "tagtik.fr",
+      "tagtik.info",
+      "tagtik.eu",
+      "tagtik.nl",
+      "francesoir.fr",
+      "reseauinternational.net",
+      "nouveau-monde.ca",
+      "planetes360.fr",
+      "egaliteetreconciliation.fr",
+      "lesmoutonsrebelles.com",
+      "valeursactuelles.com"
+    ],
+    "blacklist-brainspam": [
+      "lovemoney.com",
+      "businessam.be",
+      "starsinsider.com",
+      "saviezvousque.net",
+      "ma-grande-taille.com",
+      "periodismo.com",
+      "showbizzsite.be",
+      "espressomag.com",
+      "thedailydigest.com",
+      "newsner.com",
+      "sympa-sympa.com",
+      "ayoye.com",
+      "buzzly.fr",
+      "lesaviezvous.info",
+      "funbuzztime.com",
+      "eveilhomme.com",
+      "letribunaldunet.fr"
+    ]
+  }
+  

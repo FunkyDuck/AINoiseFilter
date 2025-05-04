@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "AI Noise Filter",
+    "version": "0.2.0",
+    "description": "AI Noise Filter bloque les sites diffusant des fake news ou du contenu généré par IA sans vérification humaine.",
+    "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "storage"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/logo-16.png",
+        "32": "icons/logo-32.png",
+        "48": "icons/logo-48.png",
+        "64": "icons/logo-64.png",
+        "128": "icons/logo-128.png"
+      }
+    },
+    "options_page": "config.html",
+    "icons": {
+      "16": "icons/logo-16.png",
+      "32": "icons/logo-32.png",
+      "48": "icons/logo-48.png",
+      "64": "icons/logo-64.png",
+      "128": "icons/logo-128.png"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["index.html"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
+  

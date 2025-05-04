@@ -1,0 +1,14 @@
+{
+  "name": "AINoiseFilter",
+  "version": "0.2.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "manifest:chrome": "node switch-manifest chrome",
+    "manifest:firefox": "node switch-manifest firefox"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
