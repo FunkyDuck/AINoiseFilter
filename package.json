@@ -1,6 +1,6 @@
 {
-  "name": "AINoiseFilter",
-  "version": "0.2.0",
+  "name": "ai-noise-filter",
+  "version": "0.2.1",
   "description": "",
   "main": "background.js",
   "scripts": {

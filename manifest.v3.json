@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "AI Noise Filter",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "AI Noise Filter bloque les sites diffusant des fake news ou du contenu généré par IA sans vérification humaine.",
     "permissions": [
       "webRequest",

@@ -1,0 +1,62 @@
+:root {
+    --red-main: #EE6055;
+    --red-light: #FF9B85;
+    --green-main: #60D394;
+    --green-light: #AAF683;
+    --yellow-main: #FFD97D;
+    --yellow-light: #FFE7AD;
+    --orange-main: #FFBA81;
+    --white-main: #FFFFFF;
+    --black-main: #000000;
+}
+
+body {
+    text-align: center;
+    background: var(--white-main);
+    font-family: "Dongle", sans-serif;
+    height: 100dvh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+
+    h1 {
+        color: var(--red-main);
+        background: var(--yellow-light);
+        border: var(--red-main 2px solid);
+        width: 80dvw;
+        border-radius: 4px;
+        font-weight: 900;
+        font-size: 5rem;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin: 10dvh 10dvw;
+        padding: 0;
+
+        img {
+            width: 100%;
+            max-width: 10dvh;
+            height: auto;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: var(--black-main);
+        color: var(--white-main);
+    }
+}
