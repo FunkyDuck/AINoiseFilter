@@ -1,6 +1,4 @@
-let blacklistIA = [];
-let blacklistFakeNews = [];
-let blacklistBrainspam = [];
+let blacklists = [];
 let blacklistUser = [];
 let whitelist = [];
 const temporaryAllowed = new Set();
@@ -8,9 +6,13 @@ const temporaryAllowed = new Set();
 fetch(chrome.runtime.getURL('data/blacklist.json'))
     .then(response => response.json())
     .then(data => {
-        blacklistIA = data['blacklist-ia'];
-        blacklistFakeNews = data['blacklist-fakenews'];
-        blacklistBrainspam = data['blacklist-brainspam'];
+        blacklists = data;
+        chrome.storage.local.get( {"whitelist": [] }, (result) => {
+            whitelist = result["whitelist"];
+            whitelist.forEach(domain => {
+                checkWhitelist(domain);
+            })
+        });
     })
     .catch(err => console.error(err));
 
@@ -36,15 +38,26 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     if (message.action === "getBlacklist") {
         const data = {
-            "blacklist-ia": blacklistIA,
-            "blacklist-fakenews": blacklistFakeNews,
-            "blacklist-brainspam": blacklistBrainspam,
+            "blacklists": blacklists,
             "blacklist-user": blacklistUser,
             "whitelist": whitelist
         };
         console.info("datas :: ", data)
         sendResponse(data);
         return true;
+    }
+
+    if (message.action === "setWhitelist") {
+        domain = message.domain;
+
+        if(!whitelist.includes(domain)) {
+            whitelist.push(domain);
+            chrome.storage.local.set({ 'whitelist': whitelist }, () => {
+                console.info(`domaine ${domain} ajouté aux exceptions`);
+                checkWhitelist(domain);
+
+            });
+        }
     }
 });
 
@@ -68,3 +81,12 @@ chrome.tabs.onRemoved.addListener((closedTab) => {
         });
     }
 });
+
+function checkWhitelist(domain) {
+    Object.entries(blacklists).forEach(([key, list]) => {
+        if (list.includes(domain)) {
+            const idx = list.indexOf(domain);
+            list.splice(idx, 1);
+        }
+    });
+}
