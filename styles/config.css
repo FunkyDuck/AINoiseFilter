@@ -19,37 +19,155 @@ body {
     display: flex;
     flex-direction: column;
     /* justify-content: space-evenly; */
+    justify-content: start;
+    font-size: 2rem;
 
     h1 {
         color: var(--red-main);
         background: var(--yellow-light);
         border: var(--red-main 2px solid);
         width: 80dvw;
+        height: 10dvh;
         border-radius: 4px;
-        font-weight: 900;
-        font-size: 5rem;
         display: flex;
         flex-direction: row;
         text-align: center;
+        justify-content: center;
         margin: 10dvh 10dvw;
-        padding: 0;
+        padding: 1dvh 0;
+        font-weight: 900;
+        font-size: 5rem;
+        line-height: 0rem;
+        vertical-align: middle;
+
+        p {
+            margin-top: 5dvh;
+        }
 
         img {
             width: 100%;
-            max-width: 10dvh;
+            max-width: 5dvw;
             height: auto;
         }
     }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    section {
+        width: 80dvw;
+        margin: 0 10dvw;
+        margin-top: -5dvh;
 
-        li {
-            display: inline;
+        ul.tabs {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            
+            li {
+                display: inline;
+                font-size: 2.5rem;
+                font-weight: 700;
+                background: var(--green-light);
+                padding: 0 1dvw;
+                border-bottom: var(--green-light) 1dvh solid;
+                border-top: var(--green-light) 1dvh solid;
+                flex: 1;
+                text-align: center;
+                cursor: pointer;
+
+            }
+
+            li:hover {
+                background: var(--yellow-light);
+                border-top: var(--yellow-light) 1dvh solid;
+                border-bottom: var(--red-main) 1dvh solid;
+            }
+
+            li.active {
+                background: var(--green-main);
+                border-top: var(--green-main) 1dvh solid;
+                border-bottom: var(--green-main) 1dvh solid;
+            }
+
+            li:first-child {
+                border-radius: 4px 0 0 0;
+            }
+
+            li:last-child {
+                border-radius: 0 4px 0 0;
+            }
+        }
+
+        article {
+            border: var(--green-main) 1px solid;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            margin: 0;
+            padding: 1dvh 1dvw;
+            text-align: left;
+            height: 55dvh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            
+            h2 {
+                margin: 0;
+                text-align: center;
+            }
+            
+            p {
+                margin: 1dvh 0;
+                padding: 0;
+                line-height: 1rem;
+            }
+            
+            ul {
+                margin: 1dvh 2.5dvw;
+                padding: 0 2.5dvw;
+                line-height: 1rem;
+
+                li {
+                    color: var(--orange-main);
+                }
+            }
+
+            ul.list {
+                list-style: none;
+                margin: 1dvh 0.5dvw;
+
+                /* li:before {
+                    content: "🚫";
+                } */
+
+                li {
+                    background: var(--green-main);
+                    color: var(--black-main);
+                    padding: 0.25dvh 2dvw;
+                    padding-right: 0;
+                    line-height: normal;
+
+                    button {
+                        margin: 0;
+
+                    }
+                }
+
+                li:nth-child(even) {
+                    background: var(--green-light);
+                }
+
+                li:first-child {
+                    border-radius: 4px 4px 0 0;
+                }
+
+                li:last-child {
+                    border-radius: 0 0 4px 4px;
+                }
+            }
+        }
+
+        article.hidden {
+            display: none;
         }
     }
 }
@@ -58,5 +176,13 @@ body {
     body {
         background: var(--black-main);
         color: var(--white-main);
+
+        section {
+            ul.tabs {
+                li {
+                    color: var(--black-main)
+                }
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@
         <title>⚙️ AI Noise Filter • Paramètres ⚙️</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="styles/config.css" />
-        <script src="utils/helpers.js" defer ></script>
+        <script src="utils/config.js" defer ></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
@@ -12,14 +12,51 @@
 
     <body>
         <h1>
-            <img src="icons/logo-128.png" alt="logo" /> AI Noise Filter : Configuration
+            <img src="icons/logo-128.png" alt="logo" /> 
+            <p>
+                AI Noise Filter : Configuration
+            </p>
         </h1>
 
-        <ul class="tabs">
-            <li id="show-blacklist">Voir les sites bloqués</li>
-            <li id="add-blacklist-user">Bloquer un site</li>
-            <li id="change-lang">Langage</li>
-            <li id="show-about">About</li>
-        </ul>
+        <section>
+            <ul id="menu-tabs" class="tabs">
+                <li id="tab-show-blacklist" class="tab active">Voir les sites bloqués</li>
+                <li id="tab-add-blacklist-user" class="tab">Bloquer un site</li>
+                <li id="tab-change-lang" class="tab">Langue</li>
+                <li id="tab-show-about" class="tab">À propos</li>
+            </ul>
+
+            <article id="show-blacklist" class="tab-data"></article>
+
+            <article id="add-blacklist-user" class="tab-data hidden">
+                User Blacklist
+            </article>
+
+            <article id="change-lang" class="tab-data hidden">
+                Coming soon...
+            </article>
+            
+            <article id="show-about" class="tab-data hidden">
+                <h2>À propos de <strong>AI Noise Filter</strong></h2>
+                <p>
+                    <strong>AI Noise Filter</strong> est une extension pour navigateur conçue pour garder votre fil d’actualité clair et pertinent. 
+                    Elle détecte et masque les contenus issus de sites :
+                </p>
+                <ul>
+                    <li>De type <em>brainspam</em> (putaclic, sensationnaliste, sans valeur ajoutée),</li>
+                    <li>Générés par intelligence artificielle non vérifiée,</li>
+                    <li>Ou relayant des fake news.</li>
+                </ul>
+                <p>Fonctionnalités principales :</p>
+                <ul>
+                    <li>Blocage visuel des publications problématiques,</li>
+                    <li>Affichage d’un avertissement avec option de consultation,</li>
+                    <li>Liste noire personnalisable.</li>
+                </ul>
+                <p>
+                    Notre objectif est de vous offrir une expérience web plus fiable, plus saine et moins polluée.
+                </p>
+            </article>
+        </section>
     </body>
 </html>

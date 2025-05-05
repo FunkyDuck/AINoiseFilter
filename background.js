@@ -28,9 +28,24 @@ chrome.webRequest.onBeforeRequest.addListener(
     ["blocking"]
 );
 
-chrome.runtime.onMessage.addListener((message, sender) => {
-    temporaryAllowed.add(message.domain);
-    console.log(`Allow to visit ${message.domain} temporary.`);
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "allowTemporarily") {
+        temporaryAllowed.add(message.domain);
+        console.log(`Allow to visit ${message.domain} temporary.`);
+    }
+
+    if (message.action === "getBlacklist") {
+        const data = {
+            "blacklist-ia": blacklistIA,
+            "blacklist-fakenews": blacklistFakeNews,
+            "blacklist-brainspam": blacklistBrainspam,
+            "blacklist-user": blacklistUser,
+            "whitelist": whitelist
+        };
+        console.info("datas :: ", data)
+        sendResponse(data);
+        return true;
+    }
 });
 
 chrome.tabs.onRemoved.addListener((closedTab) => {
