@@ -63,25 +63,26 @@ body {
             font-weight: 600;
         }
     
-    }
+        section.buttons-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 80dvw;
     
-    section.buttons-bar {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-
-        button {
-            background: var(--green-main);
-            color: var(--white-main);
-            border: none;
-            border-radius: 4px;
-            width: 20dvw;
-            height: 7.5dvh;
-            font-size: 1.5rem;
-            font-weight: 600;
-            padding: 0.5dvh 1dvw;
+            button {
+                background: var(--green-main);
+                color: var(--white-main);
+                border: none;
+                border-radius: 4px;
+                width: 15dvw;
+                height: 5dvh;
+                font-size: 1.25rem;
+                font-weight: 700;
+                padding: 0.25dvh 1dvw;
+            }
         }
     }
+    
 }
 
 @media (prefers-color-scheme: dark) {

@@ -29,7 +29,14 @@
             <article id="show-blacklist" class="tab-data"></article>
 
             <article id="add-blacklist-user" class="tab-data hidden">
-                User Blacklist
+                <form>
+                    <h2>Bloquer un site</h2>
+
+                    <label for="link-user">Lien à bloquer : </label>
+                    <input type="url" id="link-user" placeholder="ex: fakenews.com" />
+
+                    <button id="add-blacklist-user-btn" type="button">Ajouter</button>
+                </form>
             </article>
 
             <article id="change-lang" class="tab-data hidden">
